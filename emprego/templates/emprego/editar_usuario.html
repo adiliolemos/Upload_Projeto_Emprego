@@ -1,0 +1,12 @@
+{% extends 'emprego/base.html' %}
+
+{% block content %}
+    <h2>Novo Usuário</h2>
+    <form method="POST" class="table" enctype="multipart/form-data">
+    {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button class="button_esprestimo">Salvar</button>
+    </form>
+{% endblock %}

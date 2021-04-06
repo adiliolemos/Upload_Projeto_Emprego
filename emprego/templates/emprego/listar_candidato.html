@@ -1,0 +1,40 @@
+{% extends 'emprego/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+      <h5>Seja Bem Vindo,  {{user.username}}</h5>
+    {% else %}
+      <p>Você precisa realiar o login</p>
+    {% endif %}
+ 
+    <h3>Vagas Que Você Está Cadastrado</h3>
+    <table class="table">
+        {% for candidato in candidatos %}
+         <tr>
+            <td>
+           
+         
+            <b>Nome Empresa:</b> {{ candidato.empresa }}<br>
+            <b>Nome Usuário:</b> {{ candidato.usuario }}
+            </td>
+            {% if user.is_authenticated %}
+            <td>
+                <a class="btn btn-default" href="{% url 'editar_candidato' id=candidato.id %}">
+                    <button type="button" class="button_esprestimo">Editar</button>
+                </a>
+            </td>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <td>
+                 <a class="btn btn-default" href="{% url 'deletar_candidato' id=candidato.id %}">
+                    <button type="button" class="button_esprestimo">Apagar</button>
+                </a>
+            </td>
+            {% endif %}
+        </tr>
+           
+            <hr> 
+            
+        {% endfor %}
+    </table>
+{% endblock %}

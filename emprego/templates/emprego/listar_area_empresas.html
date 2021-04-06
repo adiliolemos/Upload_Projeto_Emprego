@@ -1,0 +1,22 @@
+{% extends 'emprego/base.html' %}
+
+{% block content %}
+    <h3>Vagas de Emprego(s)</h3>
+    <hr>
+        {% for empresa in empresas %}
+           
+            <img height="150" width="300" src="{{ empresa.imagem_empresa.url }}"><br>
+            <b>Nome Empresa:</b> {{ empresa.nome_empresa }}<br/>
+            <b>Descrição Empresa:</b> <br/>{{ empresa.descricao_empresa }}<br>
+            <b>Cargo Oferecido:</b> {{ empresa.cargo_oferecido }}<br>
+            <b>Descrição Cargo:</b> <br>{{ empresa.descricao_cargo }}<br>
+            <b>Cidade Cargo:</b> {{ empresa.cidade_cargo }}<br/>
+            <b>Salário Oferecido:</b> {{ empresa.salario_oferecido }}<br>
+            <b>Data Inicio:</b> {{ empresa.data_inicio }}<br/>
+            <b>Data Encerramento:</b> {{ empresa.data_encerramento }}<br>
+            <a <button class="button_esprestimo" href="{% url 'cadastrar_candidato' %}">inscreve-se</button></a>
+            <hr> 
+            
+        {% endfor %}
+{% endblock %}
+
