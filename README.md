@@ -1,6 +1,6 @@
-# Upload_Projeto_Emprego
+
 # Projeto-Quadro-de-Emprego
-Sistema de Quadro de Vagas
+Sistema de Quadro de Vagas. os usuários poderam se candidata-se a uma vaga de emprego.
 
 ## Criando o ambiente virtual
 Criando seu ambiente virtual. Vamos chamá-lo de generic myvenv
@@ -123,7 +123,7 @@ admin.site.register(Usuario)
 admin.site.register(Empresa)
 admin.site.register(Candidato)
 ```
-##criando um super usuário:
+##criando um superusuário:
 
 ```python
 python manage.py createsuperuser
